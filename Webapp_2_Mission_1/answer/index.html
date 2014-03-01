@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=800, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Mission1 Answer</title>
+	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body> 
+	<div>
+		持ち主:
+		<select id="users">
+		</select>
+		金額: 
+		<input id="amount"/>
+		<input type="button" onclick="bank.deposit($('#users').val(), $('#amount').val() - 0); showInfo();" value="預金"/>
+		<input type="button" onclick="bank.withdrawal($('#users').val(), $('#amount').val() - 0); showInfo();" value="出金"/>
+	</div>
+	<div id="info"></div>
+</body>
+</html>
