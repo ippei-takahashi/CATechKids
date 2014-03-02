@@ -23,7 +23,7 @@ function load() {
 			var rand = Math.floor(Math.random() * sources.length);
 			var src = sources.splice(rand, 1);
 			images[i].onclick = function() {
-				if (lock) {
+				if (lock || this === open || this.getAttribute("data-opened")) {
 					return;
 				}
 				lock = true;
@@ -41,6 +41,9 @@ function rotateY (img, src, i) {
 				document.getElementById("count").textContent = count + "ターン目";
 				rotateYInv(img, "img/back.jpg", 180);
 				rotateYInv(open, "img/back.jpg", 180);
+			} else {
+				img.setAttribute("data-opened", true);
+				open.setAttribute("data-opened", true);
 			}
 			open = false;
 		} else {
